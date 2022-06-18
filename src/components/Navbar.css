@@ -1,0 +1,26 @@
+.navbar {
+    background: transparent;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    height: 100vh;
+}
+
+.nav-menu.active {
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    border: 1px solid;
+    opacity: 1;
+    z-index: 1;
+}

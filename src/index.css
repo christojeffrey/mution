@@ -26,6 +26,14 @@ code {
   /* temporary, dibuka kalo bingung css */
   box-sizing: border-box;
   border-color: black;
-  border-width: 2px;
+  /* border-width: 2px; */
+  font-family: "Poppins", sans-serif;
   /* temporary, dibuka kalo bingung css */
+}
+
+.card {
+  align-items: center;
+  box-shadow: 3px 3px 4px#929292;
+  border-radius: 50px;
+  width: fit-content;
 }
