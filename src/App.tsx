@@ -14,21 +14,22 @@ import AddInstitutions from "./pages/AddInstitutions";
 import SendAuthOVO from "./pages/AddOVO/SendAuthOVO";
 import VerifyAuthOVO from "./pages/AddOVO/VerifyAuthOVO";
 import GetUserDataOVO from "./pages/AddOVO/GetUserDataOVO";
+import Wallets from "./pages/Wallets";
 
 function App() {
   return (
     <div className="">
-      {/* <Navbar /> */}
+      <Navbar />
       {/* force mobile */}
       <div className="flex flex-col items-center ">
-        <div className="w-[32rem] min-h-screen">
+        <div className="w-[32rem] min-h-screen bg-[#F4F7FB]">
           <Routes>
             {/* note to self, path selalu huruf kecil */}
             <Route path="/" element={<Home />} />
             <Route path="/mutation" element={<Mutation />} />
             <Route path="/testing" element={<Testing />} />
+            <Route path="/wallets" element={<Wallets />} />
             <Route path="/add" element={<AddInstitutions />} />
-
             <Route path="/sendauthovo" element={<SendAuthOVO />} />
             <Route path="/verifyauthovo" element={<VerifyAuthOVO />} />
             <Route path="/getuserdataovo" element={<GetUserDataOVO />} />

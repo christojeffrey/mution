@@ -1,0 +1,11 @@
+.wallet-container {
+    width: 50%;
+    margin-right: 1rem;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.wallet-top {
+    display: flex;
+    justify-content: space-between;
+}
