@@ -18,7 +18,7 @@ import GetUserDataOVO from "./pages/AddOVO/GetUserDataOVO";
 function App() {
   return (
     <div className="">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* force mobile */}
       <div className="flex flex-col items-center ">
         <div className="w-[32rem] min-h-screen">
