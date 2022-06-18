@@ -1,5 +1,9 @@
 // home page
 
+import { useEffect, useState } from "react";
+import { getAllUserAccessToken } from "../utils/database";
+import { useGetAllWalletData } from "../utils/brick";
+
 const Home = () => {
   return (
     <div className="">
@@ -22,6 +26,29 @@ const Home = () => {
 };
 
 const HomeHero = () => {
-  return <div>ini hero yang ada di home. disini ditampilin uang total saat ini.</div>;
+  const [totalBalance, setTotalBalance] = useState<any>(0);
+  const uats = getAllUserAccessToken("user1");
+  const [dataWallets, setDataWallets] = useState<any>([]);
+  useGetAllWalletData(uats).then((data) => {
+    setDataWallets(data);
+  });
+  useEffect(() => {
+    if (dataWallets) {
+      let total = 0;
+      dataWallets?.forEach((wallet: any) => {
+        console.log("wallet");
+        console.log(wallet);
+        wallet.data.forEach((data: any) => {
+          total += data.balances.available;
+        });
+
+        console.log("total");
+        console.log(total);
+        setTotalBalance(total);
+      });
+    }
+  }, [dataWallets]);
+
+  return <div>ini hero yang ada di home. disini ditampilin uang total saat ini.{totalBalance}</div>;
 };
 export default Home;

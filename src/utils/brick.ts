@@ -2,6 +2,7 @@
 
 // semua yang berhubungan sama brick disini. komponen lain gaboleh make brick langsung
 import React, { useState, useEffect } from "react";
+import { json } from "stream/consumers";
 
 // let base64 = require("base-64");
 const useFetch = (url: any, options: any) => {
@@ -154,9 +155,43 @@ export const useVerifyAuthOVO = ({ username, refId, deviceId, otpNumber, pin }: 
   return { responseAuth: response };
 };
 
-export const getTotalBalance = () => {
-  // buat main hero
+export const useGetAllWalletData = async (userAccessTokens: any[]) => {
+  let result;
+  const [response, setResponse] = useState<any>(null);
+
+  console.log("userAccessTokens");
+  console.log(userAccessTokens);
+  useEffect(() => {
+    console.log("HARUSNYA GK BERUBAH");
+    let promises = userAccessTokens.map((userAccessToken: any) => {
+      console.log("userAccessToken");
+      console.log(userAccessToken);
+      return fetch(`${process.env.REACT_APP_API_URL}/v1/account/list`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${userAccessToken}`,
+        },
+      });
+    });
+    Promise.all(promises)
+      .then((responses) => Promise.all(responses.map((res) => res.json())))
+      .then((data) => {
+        console.log("data");
+        console.log(data);
+        console.log(typeof data);
+        data.map((item: any) => {
+          console.log("item");
+          console.log(item);
+          console.log(typeof item);
+        });
+        setResponse(data);
+        result = data;
+      });
+  }, []);
+
+  return response;
 };
+
 // data buat mutasi
 export const getMutation = () => {
   // sementara asumsi 7 hari terakhir
