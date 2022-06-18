@@ -5,7 +5,6 @@ import { useGetAllWalletData } from "../utils/brick";
 import { BsPlusCircle } from "react-icons/bs"
 import { Link } from "react-router-dom";
 import BalanceBox from '../components/BalanceBox';
-import "./Wallets.css"
 
 const Wallets = () => {
     const uats = getAllUserAccessToken("user1");
@@ -16,7 +15,7 @@ const Wallets = () => {
     return (
         <div className="flex flex-col justify-center items-center">
             <div className="w-[27rem] mt-10">
-                <h1 className='font-bold text-3xl text-[#474646]'>Catatan Saldo</h1>
+                <h1 className='font-bold text-3xl text-[#474646] mb-5'>Catatan Saldo</h1>
             </div>
             {dataWallets?.map((wallet: any, index: any) => {
                 let total = 0;

@@ -33,7 +33,7 @@ code {
 
 .card {
   align-items: center;
-  box-shadow: 3px 3px 4px#929292;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
   border-radius: 50px;
   width: fit-content;
 }

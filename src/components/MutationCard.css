@@ -1,0 +1,32 @@
+.mutation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mutation-card {
+    padding: 20px;
+    align-items: center;
+    box-shadow: 3px 3px 4px#929292;
+    border-radius: 20px;
+    width: 27rem;
+    height: 150px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+    display: grid;
+    grid-template-columns: auto repeat(2, 1fr);
+    grid-template-areas: "a a c"
+                         "d d d";
+}
+
+.direction {
+    grid-area: a;
+}
+
+.institution-name {
+    grid-area: c;
+}
+
+.description {
+    grid-area: d;
+}
