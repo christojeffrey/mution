@@ -1,6 +1,7 @@
 import { useGetPublicToken, useGetAvailableInstitutions } from "../utils/brick";
 import AddInstitutionCard from "../components/AddInstitutionCard";
 const AddInstitutions = () => {
+  // page yang isinya banyak institution buat di add
   const { token } = useGetPublicToken();
 
   const { institutions } = useGetAvailableInstitutions(token);
