@@ -16,12 +16,12 @@ const Home = () => {
         <p>bhobobobo</p>
       </div>
       {/* home hero */}
-      <div>
+      <div className="p-5">
         <HomeHero />
       </div>
       {/* home hero */}
       {/* connected wallet */}
-      <div>
+      <div className="p-5">
         connected wallet and it's balance
         <Button variant="text">
           <Link to="/add">add more wallet</Link>
