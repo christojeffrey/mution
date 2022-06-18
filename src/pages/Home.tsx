@@ -59,7 +59,6 @@ const AllConnectedWallets = () => {
           id = connectedWalletInfo[index].id;
           name = connectedWalletInfo[index].name;
         }
-        console.log("aAAA");
         return <ConnectedWalletCard wallet={{ id, name, total }} />;
       })}
     </div>
