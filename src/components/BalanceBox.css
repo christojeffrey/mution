@@ -1,0 +1,52 @@
+.balance-box {
+    color: #474646;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.balance-container {
+    padding: 10px 40px 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.flows-container {
+    padding: 0px 40px 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.institution-logo {
+    display: flex;
+    font-size: 100px;
+    justify-content: left;
+    align-items: center;
+}
+
+.institution-code {
+    background:transparent;
+    padding: 0.1rem 0.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.balance-value {
+    color: #F7CE50;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.balance-box .arrow {
+    display: flex;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    color: white;
+    margin: 5px 10px 5px 0px;
+    justify-content: center;
+    align-items: center;
+}
