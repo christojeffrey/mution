@@ -5,6 +5,8 @@ import { getAllUserAccessToken, getConnectedWallets } from "../utils/database";
 import { useGetAllWalletData } from "../utils/brick";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import BalanceBox from "../components/BalanceBox";
+import Plans from "../components/Plans";
 
 const Home = () => {
   return (
@@ -31,34 +33,6 @@ const Home = () => {
       {/* connected wallet */}
     </div>
   );
-};
-
-const HomeHero = () => {
-  const [totalBalance, setTotalBalance] = useState<any>(0);
-
-  const uats = getAllUserAccessToken("user1");
-  const [dataWallets, setDataWallets] = useState<any>([]);
-  useGetAllWalletData(uats).then((data) => {
-    setDataWallets(data);
-  });
-  useEffect(() => {
-    if (dataWallets) {
-      let total = 0;
-      dataWallets?.forEach((wallet: any) => {
-        console.log("wallet");
-        console.log(wallet);
-        wallet.data.forEach((data: any) => {
-          total += data.balances.available;
-        });
-
-        console.log("total");
-        console.log(total);
-        setTotalBalance(total);
-      });
-    }
-  }, [dataWallets]);
-
-  return <div>ini hero yang ada di home. disini ditampilin uang total saat ini.{totalBalance}</div>;
 };
 
 const AllConnectedWallets = () => {
@@ -100,4 +74,30 @@ const ConnectedWalletCard = ({ wallet }: { wallet: any }) => {
   );
 };
 
+const HomeHero = () => {
+  const [totalBalance, setTotalBalance] = useState<any>(0);
+  const uats = getAllUserAccessToken("user1");
+  const [dataWallets, setDataWallets] = useState<any>([]);
+  useGetAllWalletData(uats).then((data) => {
+    setDataWallets(data);
+  });
+  useEffect(() => {
+    if (dataWallets) {
+      let total = 0;
+      dataWallets?.forEach((wallet: any) => {
+        console.log("wallet");
+        console.log(wallet);
+        wallet.data.forEach((data: any) => {
+          total += data.balances.available;
+        });
+
+        console.log("total");
+        console.log(total);
+        setTotalBalance(total);
+      });
+    }
+  }, [dataWallets]);
+
+  return <div>ini hero yang ada di home. disini ditampilin uang total saat ini.{totalBalance}</div>;
+};
 export default Home;
