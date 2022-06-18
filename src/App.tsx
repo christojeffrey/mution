@@ -15,6 +15,7 @@ import SendAuthOVO from "./pages/AddOVO/SendAuthOVO";
 import VerifyAuthOVO from "./pages/AddOVO/VerifyAuthOVO";
 import GetUserDataOVO from "./pages/AddOVO/GetUserDataOVO";
 import Wallets from "./pages/Wallets";
+import AllMutations from "./pages/AllMutations";
 
 function App() {
   return (
@@ -30,11 +31,15 @@ function App() {
             <Route path="/testing" element={<Testing />} />
             <Route path="/wallets" element={<Wallets />} />
             <Route path="/add" element={<AddInstitutions />} />
+            <Route path="/allmutations" element={<AllMutations />} />
+
+            {/* add digital wallet */}
             <Route path="/sendauthovo" element={<SendAuthOVO />} />
             <Route path="/verifyauthovo" element={<VerifyAuthOVO />} />
             <Route path="/getuserdataovo" element={<GetUserDataOVO />} />
+            {/* add digital wallet */}
 
-            {/* catcher buat yang  */}
+            {/* catcher buat 404*/}
             <Route path="*" element={<FourOhFour />} />
           </Routes>
         </div>

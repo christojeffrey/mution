@@ -193,6 +193,39 @@ export const useGetAllWalletData = async (userAccessTokens: any[]) => {
 };
 
 // data buat mutasi
-export const getMutation = () => {
-  // sementara asumsi 7 hari terakhir
+export const useGetMutation = async (userAccessTokens: any[]) => {
+  // sementara asumsi 90 hari terakhir
+  let result;
+  const [response, setResponse] = useState<any>(null);
+
+  console.log("userAccessTokens");
+  console.log(userAccessTokens);
+  useEffect(() => {
+    console.log("HARUSNYA GK BERUBAH");
+    let promises = userAccessTokens.map((userAccessToken: any) => {
+      console.log("userAccessToken");
+      console.log(userAccessToken);
+      return fetch(`${process.env.REACT_APP_API_URL}/v1/transaction/list?from=2022-06-11&to=2022-06-19`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${userAccessToken}`,
+        },
+      });
+    });
+    Promise.all(promises)
+      .then((responses) => Promise.all(responses.map((res) => res.json())))
+      .then((data) => {
+        console.log("data");
+        console.log(data);
+        console.log(typeof data);
+        data.map((item: any) => {
+          console.log("item");
+          console.log(item);
+          console.log(typeof item);
+        });
+        setResponse(data);
+        result = data;
+      });
+  }, []);
+  return response;
 };
