@@ -2,6 +2,8 @@ sementara yang dipake
 tailwind 
 material ui
 router
+dotenv (gajadi , tenryata gk perlu)
+base-64 
 
 link figma
 https://www.figma.com/file/WgEtwXTYZKDwuTDD6AfUN8/technoscape?node-id=0%3A1

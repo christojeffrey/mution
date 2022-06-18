@@ -10,19 +10,22 @@ import Home from "./pages/Home";
 import Mutation from "./pages/Mutation";
 import Testing from "./pages/Testing";
 import FourOhFour from "./pages/FourOhFour";
+import AddInstitutions from "./pages/AddInstitutions";
 
 function App() {
   return (
     <div className="">
       <Navbar />
       {/* force mobile */}
-      <div className="flex flex-col items-center">
-        <div className="w-[32rem]">
+      <div className="flex flex-col items-center ">
+        <div className="w-[32rem] min-h-screen">
           <Routes>
             {/* note to self, path selalu huruf kecil */}
             <Route path="/" element={<Home />} />
             <Route path="/mutation" element={<Mutation />} />
             <Route path="/testing" element={<Testing />} />
+            <Route path="/add" element={<AddInstitutions />} />
+            {/* catcher buat yang  */}
             <Route path="*" element={<FourOhFour />} />
           </Routes>
         </div>
