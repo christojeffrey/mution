@@ -11,6 +11,9 @@ import Mutation from "./pages/Mutation";
 import Testing from "./pages/Testing";
 import FourOhFour from "./pages/FourOhFour";
 import AddInstitutions from "./pages/AddInstitutions";
+import SendAuthOVO from "./pages/AddOVO/SendAuthOVO";
+import VerifyAuthOVO from "./pages/AddOVO/VerifyAuthOVO";
+import GetUserDataOVO from "./pages/AddOVO/GetUserDataOVO";
 
 function App() {
   return (
@@ -25,6 +28,11 @@ function App() {
             <Route path="/mutation" element={<Mutation />} />
             <Route path="/testing" element={<Testing />} />
             <Route path="/add" element={<AddInstitutions />} />
+
+            <Route path="/sendauthovo" element={<SendAuthOVO />} />
+            <Route path="/verifyauthovo" element={<VerifyAuthOVO />} />
+            <Route path="/getuserdataovo" element={<GetUserDataOVO />} />
+
             {/* catcher buat yang  */}
             <Route path="*" element={<FourOhFour />} />
           </Routes>
