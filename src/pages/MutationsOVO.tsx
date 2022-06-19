@@ -12,8 +12,8 @@ const MutationsOVO = () => {
   return (
     <div className="mutation-container">
       <div className="w-[27rem] mt-10">
-        <h1 className="font-bold text-3xl text-[#474646] mb-5">Mutasi Gabungan</h1>
-        <h1 className="text-sm text-[#474646]">Lihat mutasi gabungan harianmu! Rencanakan keuanganmu dengan mudah </h1>
+        <h1 className="font-bold text-3xl text-[#474646] mb-5">Mutasi OVO</h1>
+        <h1 className="text-sm text-[#474646]">Lihat mutasi OVO harianmu! Rencanakan keuanganmu dengan mudah </h1>
         <br />
         <div className="flex items-center bg-[#D9D9D9] text-[#5689F5] font-bold w-fit bg-opacity-20 mb-5">
           <div className="mr-2 font-bold">
@@ -37,7 +37,7 @@ const MutationsOVO = () => {
             return 0;
           }
           return (
-            <div className="">
+            <div className="flex justify-center items-center">
               <MutationCard data={record} id={id} name={name} />
             </div>
           );

@@ -73,7 +73,7 @@ function App() {
         </div>
       </div>
       {/* force mobile */}
-      <div className="absolute z-20 bottom-[-15rem] flex items-center justify-center">
+      <div className="absolute z-20 bottom-[-13rem] flex items-center justify-center">
         <div>
           {/* bwave */}
           <img src={bwave} alt="wave" className="w-screen" />

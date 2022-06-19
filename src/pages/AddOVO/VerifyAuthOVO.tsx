@@ -1,16 +1,20 @@
+import { useEffect, useState } from "react";
 import { useVerifyAuthOVO } from "../../utils/brick";
 import { useAddConnectedWallet } from "../../utils/database";
 const VerifyAuthOVO = () => {
   const smslink = localStorage.getItem("ovo-sms-link");
   const pin = localStorage.getItem("ovo-pin");
-  let ls = localStorage.getItem("ovo-send-auth-response");
-
+  const ls = localStorage.getItem("ovo-send-auth-response");
+  console.log("ls");
+  console.log(ls);
   let ovores;
+
   if (ls) {
     ovores = JSON.parse(ls);
-  } else {
-    ovores = {};
+    console.log("ovores");
+    console.log(ovores);
   }
+
   console.log("smslink");
   console.log(smslink);
   console.log("ovores");
