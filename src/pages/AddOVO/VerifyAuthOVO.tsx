@@ -1,5 +1,5 @@
 import { useVerifyAuthOVO } from "../../utils/brick";
-
+import { addConnectedWallet } from "../../utils/database";
 const VerifyAuthOVO = () => {
   const smslink = localStorage.getItem("ovo-sms-link");
   const pin = localStorage.getItem("ovo-pin");
@@ -38,6 +38,10 @@ const VerifyAuthOVO = () => {
   const { responseAuth } = useVerifyAuthOVO(data);
   console.log("response auth");
   console.log(responseAuth);
+
+  // if (responseAuth.status === "success") {
+  //   addConnectedWallet(responseAuth.data);
+  // }
 
   return (
     <div>
