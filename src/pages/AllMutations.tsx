@@ -35,7 +35,7 @@ const AllMutations = () => {
             name = connectedWalletInfo[index].name;
           }
           return (
-            <div className="">
+            <div className="flex justify-center items-center">
               <MutationCard data={record} id={id} name={name} />
             </div>
           );

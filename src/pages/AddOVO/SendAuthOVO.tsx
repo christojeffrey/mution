@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 import { useSendAuthInstitution } from "../../utils/brick";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const SendAuthOVO = () => {
   // get from local storage
   let username = localStorage.getItem("ovo-username");
@@ -23,39 +23,39 @@ const SendAuthOVO = () => {
           <h1 className="font-bold text-3xl mb-5">Tambah Akun</h1>
         </div>
         <div>
-          <form
+          {/* <form
             className="input-wrapper"
             onSubmit={() => {
               console.log("berhasil di set");
             }}
-          >
-            <h1 className="font-semibold">Masukkan link yang telah dikirimkan ke ponselmu </h1>
-            <input
-              className="search-input"
-              type="text"
-              placeholder={"https://ovo.id/app/login?code=..."}
-              value={SMSLink}
-              onChange={(e) => {
-                setSMSLink(e.target.value);
-                localStorage.setItem("ovo-sms-link", e.target.value);
-              }}
-            />
-            <br />
-            <h1 className="font-semibold">Masukkan PIN OVO</h1>
-            <input
-              className="search-input"
-              type="text"
-              placeholder={"PIN (6 digit)"}
-              value={pin}
-              onChange={(e) => {
-                setPin(e.target.value);
-                localStorage.setItem("ovo-pin", pin);
-              }}
-            />
-            <Link to="/sendauthovo" className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center transition ease-in-out hover:scale-105">
-              <input type="submit" value="Submit" />
-            </Link>
-          </form>
+          > */}
+          <h1 className="font-semibold">Masukkan link yang telah dikirimkan ke ponselmu </h1>
+          <input
+            className="search-input"
+            type="text"
+            placeholder={"https://ovo.id/app/login?code=..."}
+            value={SMSLink}
+            onChange={(e) => {
+              setSMSLink(e.target.value);
+              localStorage.setItem("ovo-sms-link", e.target.value);
+            }}
+          />
+          <br />
+          <h1 className="font-semibold">Masukkan PIN OVO</h1>
+          <input
+            className="search-input"
+            type="password"
+            placeholder={"PIN (6 digit)"}
+            value={pin}
+            onChange={(e) => {
+              setPin(e.target.value);
+              localStorage.setItem("ovo-pin", e.target.value);
+            }}
+          />
+          <Link to="/verifyauthovo" className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center transition ease-in-out hover:scale-105" onClick={() => {}}>
+            <input type="submit" value="Submit" />
+          </Link>
+          {/* </form> */}
         </div>
       </div>
     </>
