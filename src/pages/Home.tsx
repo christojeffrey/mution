@@ -2,9 +2,6 @@
 
 import HomeHero from "../components/HomeHero";
 import AllConnectedWallets from "../components/ConnectedWallet";
-
-import BalanceBox from "../components/BalanceBox";
-import PlanBox from "../components/PlanBox";
 import FinancialPlan from "../components/FinancialPlan";
 
 // import wave from assets

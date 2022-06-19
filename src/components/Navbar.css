@@ -9,18 +9,21 @@
     z-index: 999;
 }
 
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    height: 100vh;
+nav {
+    z-index: 999;
 }
-
-.nav-menu.active {
+.nav-links {
+    font-weight: 600;
+    color: #474646;
     display: flex;
-    position: fixed;
-    height: 100vh;
-    border: 1px solid;
-    opacity: 1;
-    z-index: 1;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    padding-left: 2.5rem;
+    height: 100%;
+}
+  
+.nav-links:hover {
+    transition: all 0.2s ease-out;
+    background-color: #D9D9D9;
 }

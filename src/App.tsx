@@ -42,10 +42,10 @@ function App() {
           <img src={twave} alt="wave" className="w-[32rem]" />
         </div>
       </div>
-      <Navbar />
       {/* force mobile */}
       <div className="flex flex-col items-center bg-[#F4F7FB]">
         <div className="w-[32rem] min-h-screen z-30">
+          <Navbar />
           <Routes>
             {/* note to self, path selalu huruf kecil */}
             <Route path="/" element={<Home />} />
@@ -79,7 +79,7 @@ function App() {
           <img src={bwave} alt="wave" className="w-screen" />
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
