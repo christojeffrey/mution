@@ -1,6 +1,7 @@
 # mution
 it's an app focuses on automating mutation for all your digital wallet, so you don't have to remember writing down that last meal you had in your excel.
 
+this app uses react.
 ---
 ### how to run
 first, run the backend for mution. it's in [this repo](https://github.com/christojeffrey/mution-backend)
