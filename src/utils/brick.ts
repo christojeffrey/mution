@@ -118,8 +118,10 @@ export const useSendAuthInstitution = (publicToken: any, institutionId: any, use
   // add body
   let raw = JSON.stringify({
     institution_id: 12,
-    username: "+6285156961915",
+    username,
   });
+  console.log("raw minta otp");
+  console.log(raw);
   let options = {
     method: "POST",
     headers: myHeaders,
@@ -138,19 +140,22 @@ export const useVerifyAuthOVO = ({ username, refId, deviceId, otpNumber, pin }: 
 
   // add body
   let raw = JSON.stringify({
-    username: "+6285156961915",
+    username,
     refId,
     deviceId,
     otpNumber,
-    pin: "040902",
+    pin,
   });
-
+  console.log("raw verif otp");
+  console.log(raw);
   let options = {
     method: "POST",
     headers: myHeaders,
     body: raw,
   };
   const { response, error, loading } = useFetch(url, options);
+  console.log("response verif otp");
+  console.log(response);
   return { responseAuth: response };
 };
 
