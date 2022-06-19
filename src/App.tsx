@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="">
       {/* full bg */}
-      <div className=" absolute bg-[#F4F7FB] -z-50 w-full h-[40rem]"></div>
+      <div className=" absolute bg-[#F4F7FB] -z-50 w-full h-[50rem]"></div>
       <div className="absolute z-20 flex items-center justify-center w-full">
         <div>
           {/* twave */}
@@ -79,7 +79,7 @@ function App() {
           <img src={bwave} alt="wave" className="w-screen" />
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
