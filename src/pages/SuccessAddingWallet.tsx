@@ -16,8 +16,8 @@ const SuccessAddingWallet = () => {
   useAddConnectedWallet("user1", newWallet);
 
   return (
-    <div>
-      <h1>Success Adding Wallet!</h1>
+    <div className="flex items-center justify-center min-h-[30rem]">
+      <div className="text-[2rem] pt-10">Success Adding Wallet!</div>
     </div>
   );
 };

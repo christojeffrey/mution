@@ -32,26 +32,11 @@ const SendAuthOVO = () => {
             }}
           >
             <h1 className="font-semibold">Masukkan link yang telah dikirimkan ke ponselmu </h1>
-            <input
-              className="search-input"
-              type="text"
-              placeholder={"https://ovo.id/app/login?code=..."}
-              value={SMSLink}
-              onChange={(e) => setSMSLink(e.target.value)}
-            />
+            <input className="search-input" type="text" placeholder={"https://ovo.id/app/login?code=..."} value={SMSLink} onChange={(e) => setSMSLink(e.target.value)} />
             <br />
             <h1 className="font-semibold">Masukkan PIN OVO</h1>
-            <input
-              className="search-input"
-              type="text"
-              placeholder={"PIN (6 digit)"}
-              value={pin}
-              onChange={(e) => setPin(e.target.value)}
-            />
-            <Link
-              to="/sendauthovo"
-              className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center"
-            >
+            <input className="search-input" type="text" placeholder={"PIN (6 digit)"} value={pin} onChange={(e) => setPin(e.target.value)} />
+            <Link to="/sendauthovo" className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center transition ease-in-out hover:scale-105">
               <input type="submit" value="Submit" />
             </Link>
           </form>
