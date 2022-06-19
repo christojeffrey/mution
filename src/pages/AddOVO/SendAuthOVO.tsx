@@ -8,8 +8,8 @@ const SendAuthOVO = () => {
 
   const { responseAuth } = useSendAuthInstitution("token2an", 12, username);
 
-  //   console.log("responseAuth");
-  //   console.log(responseAuth);
+  console.log("responseAuth abis minta otp");
+  console.log(responseAuth);
   //   masukin response di local storage
   localStorage.setItem("ovo-send-auth-response", JSON.stringify(responseAuth));
 

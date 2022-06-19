@@ -4,7 +4,6 @@
 import React, { useState, useEffect } from "react";
 import { json } from "stream/consumers";
 
-// let base64 = require("base-64");
 const useFetch = (url: any, options: any) => {
   const [response, setResponse] = useState<any>(null);
   const [error, setError] = useState<any>(null);
