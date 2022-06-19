@@ -39,7 +39,7 @@ const VerifyAuthOVO = () => {
   console.log("response auth");
   console.log(responseAuth);
   // {"status":200,"message":"OK","data":"access-sandbox-52f77ce5-699c-4c0f-bf4d-282855814451"}
-  if (responseAuth.message === "OK") {
+  if (responseAuth?.message === "OK") {
     // set data to local storage
     localStorage.setItem(
       "new-wallet",
