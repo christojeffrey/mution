@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const BalanceBox = ({ wallet }: { wallet: any }) => {
   return (
-    <div className="card balance-box bg-[#FFFFFF]">
+    <div className="card balance-box bg-[#FFFFFF] transition ease-in-out hover:scale-[1.02]">
       <Link to={`/mutations${wallet.name}`}>
         <div className="balance-container">
           <div className="institution-logo">

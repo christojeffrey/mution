@@ -5,7 +5,7 @@ import "./AddInstitutions.css";
 const AddInstitutionCard = ({ institution }: { institution: any }) => {
   return (
     <Link to={`/getuserdata${institution.name}`}>
-      <div className="institution-card">
+      <div className="institution-card bg-white">
         <img src={institution.id === 12 ? require("../assets/12.png") : institution.id === 11 ? require("../assets/11.png") : ""} alt="" width={150} />
       </div>
     </Link>
