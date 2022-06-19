@@ -1,24 +1,40 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./GetUserData.css"
 
 const GetUserDataOVO = () => {
   const [username, setUsername] = useState("+6285156961915");
+
   return (
-    <div>
-      <div>minta no telp yang didaftarin di ovo dong</div>
-      <div>
-        <TextField id="filled-basic" label="no telp" variant="filled" value={username} onChange={(e) => setUsername(e.target.value)} />
+    <div className="flex flex-col mx-10 mt-10 text-[#474646] ">
+      <div className="w-[27rem] mt-10 mb-5">
+        <h1 className="font-bold text-3xl mb-5">Tambah Akun</h1>
       </div>
-      <Link
-        to="/sendauthovo"
-        onClick={() => {
-          localStorage.setItem("ovo-username", username);
-          console.log("berhasil di set");
-        }}
-      >
-        gaskan
-      </Link>
+      <div>
+        <form
+          className="input-wrapper"
+          onSubmit={() => {
+            localStorage.setItem("ovo-username", username);
+            console.log("berhasil di set");
+          }}
+        >
+          <h1 className="font-semibold">Masukkan nomor handphone</h1>
+          <input
+            className="search-input"
+            type="text"
+            placeholder={"No. Handphone"}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Link
+            to="/sendauthovo"
+            className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center"
+          >
+            <input type="submit" value="Submit" />
+          </Link>
+        </form>
+      </div>
     </div>
   );
 };

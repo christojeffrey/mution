@@ -1,0 +1,10 @@
+.search-input {
+    background: rgba(217, 217, 217, 0.2);
+    border-radius: 20px;
+    padding: 10px 15px ;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
