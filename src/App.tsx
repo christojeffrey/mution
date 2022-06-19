@@ -18,6 +18,7 @@ import Wallets from "./pages/Wallets";
 import AllMutations from "./pages/AllMutations";
 import Settings from "./pages/Settings";
 import MutationsOVO from "./pages/MutationsOVO";
+import SuccessAddingWallet from "./pages/SuccessAddingWallet";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/verifyauthovo" element={<VerifyAuthOVO />} />
             <Route path="/getuserdataovo" element={<GetUserDataOVO />} />
             {/* add digital wallet */}
+            <Route path="/successaddingwallet" element={<SuccessAddingWallet />} />
 
             {/* catcher buat 404*/}
             <Route path="*" element={<FourOhFour />} />
