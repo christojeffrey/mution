@@ -1,24 +1,14 @@
+import { Link } from "react-router-dom";
 import { useGetPublicToken, useGetAvailableInstitutions } from "../utils/brick";
 import "./AddInstitutions.css";
-import { Link } from "react-router-dom"
 
 const AddInstitutionCard = ({ institution }: { institution: any }) => {
   return (
-    <div className="institution-card">
-      <Link to="/ovo/getuserdata">
-        <img
-          src={
-            institution.id === 12
-              ? require("../assets/12.png")
-              : institution.id === 11
-                ? require("../assets/11.png")
-                : ""
-          }
-          alt=""
-          width={150}
-        />
-      </Link>
-    </div>
+    <Link to={`/getuserdata${institution.name}`}>
+      <div className="institution-card">
+        <img src={institution.id === 12 ? require("../assets/12.png") : institution.id === 11 ? require("../assets/11.png") : ""} alt="" width={150} />
+      </div>
+    </Link>
   );
   //   automatic_verification: true
   //   bank_code: "KlikBCA Internet Banking"
@@ -46,7 +36,7 @@ const AddInstitutions = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="w-[27rem] mt-10">
-        <h1 className='font-bold text-3xl text-[#474646] mb-5'>Tambah Akun</h1>
+        <h1 className="font-bold text-3xl text-[#474646] mb-5">Tambah Akun</h1>
       </div>
       {institutions?.map((institution: any) => {
         return <AddInstitutionCard institution={institution} />;

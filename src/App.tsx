@@ -16,6 +16,8 @@ import VerifyAuthOVO from "./pages/AddOVO/VerifyAuthOVO";
 import GetUserDataOVO from "./pages/AddOVO/GetUserDataOVO";
 import Wallets from "./pages/Wallets";
 import AllMutations from "./pages/AllMutations";
+import Settings from "./pages/Settings";
+import MutationsOVO from "./pages/MutationsOVO";
 
 function App() {
   return (
@@ -31,12 +33,16 @@ function App() {
             <Route path="/testing" element={<Testing />} />
             <Route path="/wallets" element={<Wallets />} />
             <Route path="/add" element={<AddInstitutions />} />
+            <Route path="/settings" element={<Settings />} />
+            {/* mutations */}
             <Route path="/allmutations" element={<AllMutations />} />
+            <Route path="/mutationsovo" element={<MutationsOVO />} />
+            {/* mutations */}
 
             {/* add digital wallet */}
-            <Route path="/ovo/sendauth" element={<SendAuthOVO />} />
-            <Route path="/ovo/verifyauth" element={<VerifyAuthOVO />} />
-            <Route path="/ovo/getuserdata" element={<GetUserDataOVO />} />
+            <Route path="/sendauthovo" element={<SendAuthOVO />} />
+            <Route path="/verifyauthovo" element={<VerifyAuthOVO />} />
+            <Route path="/getuserdataovo" element={<GetUserDataOVO />} />
             {/* add digital wallet */}
 
             {/* catcher buat 404*/}
