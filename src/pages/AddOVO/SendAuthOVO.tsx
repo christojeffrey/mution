@@ -21,7 +21,8 @@ const SendAuthOVO = () => {
       <h1>Sending Auth OVO...</h1>
       <div> aku butuh data sms sama pinmu</div>
       <div className="flex flex-col">
-        <TextField id="filled-basic" label="smsnya" variant="filled" value={SMSLink} onChange={(e) => setSMSLink(e.target.value)} />
+        link di sms
+        <TextField id="filled-basic" label="https://.." variant="filled" value={SMSLink} onChange={(e) => setSMSLink(e.target.value)} />
         <TextField id="filled-basic" label="pin" variant="filled" type="password" value={pin} onChange={(e) => setPin(e.target.value)} />
         <Link
           to="/verifyauthovo"
