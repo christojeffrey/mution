@@ -12,8 +12,8 @@ const AllMutations = () => {
   let connectedWalletInfo = useGetConnectedWallets("user1");
 
   return (
-    <div className="mutation-container">
-      <div className="w-[27rem] mt-10">
+    <div className="flex flex-col ">
+      <div className="w-[27rem] mt-10 mx-10">
         <h1 className="font-bold text-3xl text-[#474646] mb-5">Mutasi Gabungan</h1>
         <h1 className="text-sm text-[#474646]">Lihat mutasi gabungan harianmu! Rencanakan keuanganmu dengan mudah </h1>
         <br />

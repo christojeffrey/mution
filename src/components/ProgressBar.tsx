@@ -14,8 +14,13 @@ const ProgressBar = (props: { color: any, strokeWidth: any, fontsize: any, size:
     const circumference = 2 * Math.PI * radius;
 
     useEffect(() => {
-        const progressOffset = ((100 - progress) / 100) * circumference;
-        setOffset(progressOffset);
+        if (progress > 100) {
+            const progressOffset = ((100 - 100) / 100) * circumference;
+            setOffset(progressOffset);
+        } else {
+            const progressOffset = ((100 - progress) / 100) * circumference;
+            setOffset(progressOffset);
+        }
     }, [setOffset, progress, circumference, offset]);
 
     return (
@@ -53,7 +58,7 @@ const ProgressBar = (props: { color: any, strokeWidth: any, fontsize: any, size:
                     fontWeight={"bold"}
                     fontSize={fontsize}
                     className="svg-circle-text">
-                    <tspan className="text-sm" fill={color}>{progress >= 100 ? "!" : progress + "%"}</tspan>
+                    <tspan className={`text-${fontsize}`} fill={color}>{progress >= 100 ? "!" : progress + "%"}</tspan>
                 </text>
             </svg>
         </>
@@ -63,7 +68,7 @@ const ProgressBar = (props: { color: any, strokeWidth: any, fontsize: any, size:
 ProgressBar.propTypes = {
     progress: PropTypes.number.isRequired,
     size: PropTypes.number.isRequired,
-    fontsize: PropTypes.number.isRequired,
+    fontsize: PropTypes.string.isRequired,
     strokeWidth: PropTypes.number.isRequired,
     color: PropTypes.string.isRequired,
 }
