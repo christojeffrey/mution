@@ -64,14 +64,42 @@ interface IWallet {
   name: string;
   accessToken: string;
 }
-export const addConnectedWallet = (username: string, wallet: IWallet) => {
-  // for (let i = 0; i < database.length; i++) {
-  //   if (database[i].username === username) {
-  //     database[i].connectedWallet.push(wallet);
-  //     return true;
-  //   }
-  // }
-  // return 0;
+export const useAddConnectedWallet = (username: string, wallet: IWallet) => {
+  const [response, setResponse] = useState<any>(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:8081/addConnectedWallet/${username}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(wallet),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((database) => {
+        console.log("data dari fetch");
+        console.log(database);
+        let data;
+        for (let i = 0; i < database.length; i++) {
+          if (database[i].username === username) {
+            data = database[i].connectedWallet;
+            break;
+          }
+        }
+        let res = [];
+        for (let i = 0; i < data.length; i++) {
+          res.push(data[i].accessToken);
+        }
+        console.log("res");
+        console.log(res);
+        setResponse(res);
+      });
+  }, []);
+  // console.log("response");
+  // console.log(response);
+  return response;
 };
 
 export const removeConnectedWallet = (username: string, walletId: number) => {
@@ -88,11 +116,3 @@ export const removeConnectedWallet = (username: string, walletId: number) => {
   // }
   // return 0;
 };
-
-const writeToDatabase = async (content: any) => {
-  // let writeJson = require("write-json");
-  // // sync
-  // writeJson.sync("database.json", { abc: "xyz" });
-};
-
-// fetch("http://localhost:8080/")

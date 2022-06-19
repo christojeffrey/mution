@@ -17,6 +17,7 @@ import GetUserDataOVO from "./pages/AddOVO/GetUserDataOVO";
 import Wallets from "./pages/Wallets";
 import AllMutations from "./pages/AllMutations";
 import Settings from "./pages/Settings";
+import MutationsOVO from "./pages/MutationsOVO";
 
 function App() {
   return (
@@ -32,8 +33,11 @@ function App() {
             <Route path="/testing" element={<Testing />} />
             <Route path="/wallets" element={<Wallets />} />
             <Route path="/add" element={<AddInstitutions />} />
-            <Route path="/allmutations" element={<AllMutations />} />
             <Route path="/settings" element={<Settings />} />
+            {/* mutations */}
+            <Route path="/allmutations" element={<AllMutations />} />
+            <Route path="/mutationsovo" element={<MutationsOVO />} />
+            {/* mutations */}
 
             {/* add digital wallet */}
             <Route path="/sendauthovo" element={<SendAuthOVO />} />

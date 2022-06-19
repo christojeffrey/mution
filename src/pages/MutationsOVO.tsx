@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { BsFillCalendarFill } from "react-icons/bs";
+import MutationCard from "../components/MutationCard";
 import { useGetMutation } from "../utils/brick";
 import { useGetAllUserAccessToken, useGetConnectedWallets } from "../utils/database";
-import { BsFillCalendarFill } from "react-icons/bs";
 
-import MutationCard from "../components/MutationCard";
-
-const AllMutations = () => {
+const MutationsOVO = () => {
   const uats = useGetAllUserAccessToken("user1");
   const mutationsData = useGetMutation(uats);
 
@@ -34,6 +32,10 @@ const AllMutations = () => {
             id = connectedWalletInfo[index].id;
             name = connectedWalletInfo[index].name;
           }
+          if (id !== 12) {
+            //id ovo 12
+            return 0;
+          }
           return (
             <div className="">
               <MutationCard data={record} id={id} name={name} />
@@ -45,4 +47,4 @@ const AllMutations = () => {
   );
 };
 
-export default AllMutations;
+export default MutationsOVO;
