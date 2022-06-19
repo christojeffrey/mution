@@ -21,24 +21,26 @@ const AllConnectedWallets = () => {
           <Link className="p-0" to="/wallets">LIHAT LAINNYA</Link>
         </button>
       </div>
-      <div className="flex justify-center">
-        {dataWallets?.map((wallet: any, index: any) => {
-          let total = 0;
-          wallet.data.forEach((data: any) => {
-            total += data.balances.available;
-          });
-          console.log("total");
-          console.log(total);
-          console.log("wllet");
-          console.log(wallet);
-          let id;
-          let name;
-          if (connectedWalletInfo) {
-            id = connectedWalletInfo[index].id;
-            name = connectedWalletInfo[index].name;
-          }
-          return <ConnectedWalletCard wallet={{ id, name, total }} />;
-        })}
+      <div className="mx-10">
+        <div className="flex justify-start">
+          {dataWallets?.map((wallet: any, index: any) => {
+            let total = 0;
+            wallet.data.forEach((data: any) => {
+              total += data.balances.available;
+            });
+            console.log("total");
+            console.log(total);
+            console.log("wllet");
+            console.log(wallet);
+            let id;
+            let name;
+            if (connectedWalletInfo) {
+              id = connectedWalletInfo[index].id;
+              name = connectedWalletInfo[index].name;
+            }
+            return <ConnectedWalletCard wallet={{ id, name, total }} />;
+          })}
+        </div>
       </div>
     </div>
   );

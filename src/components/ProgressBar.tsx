@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import './ProgressBar.css';
+// import './ProgressBar.css';
 
-const ProgressBar = (props: { strokeWidth: any, fontsize: any, size: any, progress: any; }) => {
+const ProgressBar = (props: { color: any, strokeWidth: any, fontsize: any, size: any, progress: any; }) => {
     const [offset, setOffset] = useState(0);
     const circleRef = useRef(null);
 
-    const { strokeWidth, fontsize, progress, size } = props;
+    const { color, strokeWidth, fontsize, progress, size } = props;
 
     const center = size / 2;
     const radius = size / 2 - strokeWidth / 2;
@@ -29,6 +29,7 @@ const ProgressBar = (props: { strokeWidth: any, fontsize: any, size: any, progre
                     className="svg-circle-bg"
                     stroke='#D9D9D9'
                     cx={center}
+                    fill="none"
                     cy={center}
                     r={radius}
                     strokeWidth={strokeWidth}
@@ -36,8 +37,9 @@ const ProgressBar = (props: { strokeWidth: any, fontsize: any, size: any, progre
                 <circle
                     className="svg-circle"
                     ref={circleRef}
-                    stroke="#F7CE50"
+                    stroke={color}
                     cx={center}
+                    fill="none"
                     cy={center}
                     r={radius}
                     strokeWidth={strokeWidth}
@@ -46,10 +48,12 @@ const ProgressBar = (props: { strokeWidth: any, fontsize: any, size: any, progre
                 />
                 <text
                     x={`${center}`}
-                    y={`${center}`}
+                    y={`${center + 5}`}
+                    textAnchor="middle"
+                    fontWeight={"bold"}
                     fontSize={fontsize}
                     className="svg-circle-text">
-                    {progress}%
+                    <tspan className="text-sm" fill={color}>{progress >= 100 ? "!" : progress + "%"}</tspan>
                 </text>
             </svg>
         </>
@@ -61,6 +65,7 @@ ProgressBar.propTypes = {
     size: PropTypes.number.isRequired,
     fontsize: PropTypes.number.isRequired,
     strokeWidth: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired,
 }
 
 export default ProgressBar;

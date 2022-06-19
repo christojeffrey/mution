@@ -19,6 +19,7 @@ import AllMutations from "./pages/AllMutations";
 import Settings from "./pages/Settings";
 import MutationsOVO from "./pages/MutationsOVO";
 import SuccessAddingWallet from "./pages/SuccessAddingWallet";
+import Planning from "./pages/Planning";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/mutation" element={<Mutation />} />
             <Route path="/testing" element={<Testing />} />
             <Route path="/wallets" element={<Wallets />} />
+            <Route path="/planning" element={<Planning />} />
             <Route path="/add" element={<AddInstitutions />} />
             <Route path="/settings" element={<Settings />} />
             {/* mutations */}
