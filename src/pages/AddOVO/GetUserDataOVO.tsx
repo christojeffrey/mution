@@ -15,12 +15,21 @@ const GetUserDataOVO = () => {
         <form
           className="input-wrapper"
           onSubmit={() => {
-            localStorage.setItem("ovo-username", username);
             console.log("berhasil di set");
+            console.log(username);
           }}
         >
           <h1 className="font-semibold">Masukkan nomor handphone</h1>
-          <input className="search-input" type="text" placeholder={"No. Handphone"} value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input
+            className="search-input"
+            type="text"
+            placeholder={"No. Handphone"}
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              localStorage.setItem("ovo-username", e.target.value);
+            }}
+          />
           <Link to="/sendauthovo" className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center transition ease-in-out hover:scale-105">
             <input type="submit" value="Submit" />
           </Link>
