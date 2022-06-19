@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
 const FinancialPlan = () => {
-    let transportasi = 25;
-    let makanan = 100;
-    let lainnya = 25;
+    let transportasi = 50;
+    let makanan = 120;
+    let lainnya = 75;
 
     return (
         <div className="financial-plan">
@@ -20,7 +20,7 @@ const FinancialPlan = () => {
                         <ProgressBar
                             color="#8A81E4"
                             strokeWidth={10}
-                            fontsize={10}
+                            fontsize={"sm"}
                             size={70}
                             progress={transportasi}
                         />
@@ -35,7 +35,7 @@ const FinancialPlan = () => {
                         <ProgressBar
                             color="#FF6240"
                             strokeWidth={10}
-                            fontsize={10}
+                            fontsize={"sm"}
                             size={70}
                             progress={makanan}
                         />
@@ -48,9 +48,9 @@ const FinancialPlan = () => {
                 <div className="flex items-center m-4">
                     <div className="mr-4">
                         <ProgressBar
-                            color="#8A81E4"
+                            color="#F7CE50"
                             strokeWidth={10}
-                            fontsize={10}
+                            fontsize={"sm"}
                             size={70}
                             progress={lainnya}
                         />

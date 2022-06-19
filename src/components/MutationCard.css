@@ -1,9 +1,4 @@
-.mutation-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 .mutation-card {
     padding: 20px;
     align-items: center;
