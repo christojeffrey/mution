@@ -68,8 +68,8 @@ const HomeHero = () => {
             Lihat transaksi terbaru!{" "}
           </p>
         </div>
-        <button className="flex items-center text-xs">
-          <BsDash /><CgArrowLongRight />
+        <button className="">
+          <Link className="flex items-center text-xs" to="/allmutations"> <BsDash /><CgArrowLongRight /></Link>
         </button>
       </div>
     </>
