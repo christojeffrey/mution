@@ -59,7 +59,9 @@ const HomeHero = () => {
           </div>
         </div>
       </div>
-      <div className="card px-2 py-1 mt-5 bg-gradient-to-r from-[#F1A259] via-[#EC7251] to-[#F1A259] text-[#FFFFFF] flex justify-between">
+
+      {/* Notification */}
+      <div className="card px-2 py-1 mt-5 mb-10 bg-gradient-to-r from-[#F1A259] via-[#EC7251] to-[#F1A259] text-[#FFFFFF] flex justify-between">
         <div className="flex">
           <div className="mr-2">
             <TbBellRinging />
@@ -70,6 +72,14 @@ const HomeHero = () => {
         </div>
         <button className="">
           <Link className="flex items-center text-xs" to="/allmutations"> <BsDash /><CgArrowLongRight /></Link>
+        </button>
+      </div>
+      {/* Notification */}
+
+      <div className="home-headings text-[#474646]">
+        <h2 className="font-bold text-2xl">Catatan Saldo</h2>
+        <button className="text-3xs bg-[#D9D9D9] bg-opacity-40 rounded-lg px-2 my-1 font-bold">
+          <Link className="p-0" to="/wallets">LIHAT LAINNYA</Link>
         </button>
       </div>
     </>

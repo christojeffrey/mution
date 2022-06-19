@@ -17,25 +17,47 @@ const SendAuthOVO = () => {
   const [SMSLink, setSMSLink] = useState("");
   const [pin, setPin] = useState("");
   return (
-    <div>
-      <h1>Sending Auth OVO...</h1>
-      <div> aku butuh data sms sama pinmu</div>
-      <div className="flex flex-col">
-        link di sms
-        <TextField id="filled-basic" label="https://.." variant="filled" value={SMSLink} onChange={(e) => setSMSLink(e.target.value)} />
-        <TextField id="filled-basic" label="pin" variant="filled" type="password" value={pin} onChange={(e) => setPin(e.target.value)} />
-        <Link
-          to="/verifyauthovo"
-          onClick={() => {
-            localStorage.setItem("ovo-sms-link", SMSLink);
-            localStorage.setItem("ovo-pin", pin);
-            console.log("berhasil di set");
-          }}
-        >
-          gaskan
-        </Link>
+    <>
+      <div className="flex flex-col mx-10 mt-10 text-[#474646] ">
+        <div className="w-[27rem] mt-10 mb-5">
+          <h1 className="font-bold text-3xl mb-5">Tambah Akun</h1>
+        </div>
+        <div>
+          <form
+            className="input-wrapper"
+            onSubmit={() => {
+              localStorage.setItem("ovo-sms-link", SMSLink);
+              localStorage.setItem("ovo-pin", pin);
+              console.log("berhasil di set");
+            }}
+          >
+            <h1 className="font-semibold">Masukkan link yang telah dikirimkan ke ponselmu </h1>
+            <input
+              className="search-input"
+              type="text"
+              placeholder={"https://ovo.id/app/login?code=..."}
+              value={SMSLink}
+              onChange={(e) => setSMSLink(e.target.value)}
+            />
+            <br />
+            <h1 className="font-semibold">Masukkan PIN OVO</h1>
+            <input
+              className="search-input"
+              type="text"
+              placeholder={"PIN (6 digit)"}
+              value={pin}
+              onChange={(e) => setPin(e.target.value)}
+            />
+            <Link
+              to="/sendauthovo"
+              className="flex card mt-10 py-2 bg-[#FFFFFF] text-[#EC7250] font-semibold justify-center items-center"
+            >
+              <input type="submit" value="Submit" />
+            </Link>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

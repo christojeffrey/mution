@@ -14,33 +14,25 @@ const AllConnectedWallets = () => {
   const dataWallets = useGetAllWalletData(uats);
   let connectedWalletInfo = useGetConnectedWallets("user1");
   return (
-    <div className="">
-      <div className="home-headings mx-10 text-[#474646]">
-        <h2 className="font-bold ">Catatan Saldo</h2>
-        <button className="text-3xs bg-[#D9D9D9] bg-opacity-40 rounded-lg px-2 my-1 font-bold">
-          <Link className="p-0" to="/wallets">LIHAT LAINNYA</Link>
-        </button>
-      </div>
-      <div className="mx-10">
-        <div className="flex justify-start">
-          {dataWallets?.map((wallet: any, index: any) => {
-            let total = 0;
-            wallet.data.forEach((data: any) => {
-              total += data.balances.available;
-            });
-            console.log("total");
-            console.log(total);
-            console.log("wllet");
-            console.log(wallet);
-            let id;
-            let name;
-            if (connectedWalletInfo) {
-              id = connectedWalletInfo[index].id;
-              name = connectedWalletInfo[index].name;
-            }
-            return <ConnectedWalletCard wallet={{ id, name, total }} />;
-          })}
-        </div>
+    <div className="mx-10">
+      <div className="flex justify-start">
+        {dataWallets?.map((wallet: any, index: any) => {
+          let total = 0;
+          wallet.data.forEach((data: any) => {
+            total += data.balances.available;
+          });
+          console.log("total");
+          console.log(total);
+          console.log("wllet");
+          console.log(wallet);
+          let id;
+          let name;
+          if (connectedWalletInfo) {
+            id = connectedWalletInfo[index].id;
+            name = connectedWalletInfo[index].name;
+          }
+          return <ConnectedWalletCard wallet={{ id, name, total }} />;
+        })}
       </div>
     </div>
   );

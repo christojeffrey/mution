@@ -34,7 +34,7 @@ const AddInstitutions = () => {
   const { institutions } = useGetAvailableInstitutions(token);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col mx-10 mt-10 items-center">
       <div className="w-[27rem] mt-10">
         <h1 className="font-bold text-3xl text-[#474646] mb-5">Tambah Akun</h1>
       </div>
