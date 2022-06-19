@@ -26,6 +26,7 @@ code {
   /* temporary, dibuka kalo bingung css */
   box-sizing: border-box;
   border-color: black;
+  caret-color: transparent;
   /* border-width: 2px; */
   font-family: "Poppins", sans-serif;
   /* temporary, dibuka kalo bingung css */
@@ -42,6 +43,9 @@ code {
   line-height: 0.75rem;
 }
 
+input:focus {
+  caret-color: auto;
+}
 .text-3xs {
   font-size: 0.5rem;
   line-height: 0.5rem;
