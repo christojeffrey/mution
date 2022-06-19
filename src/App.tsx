@@ -23,16 +23,23 @@ import Planning from "./pages/Planning";
 
 import bwave from "./assets/bwave.svg";
 import twave from "./assets/twave.svg";
+import twave2 from "./assets/twave2.svg";
 
 function App() {
   return (
     <div className="">
       {/* full bg */}
       <div className=" absolute bg-[#F4F7FB] -z-50 w-full h-[40rem]"></div>
-      <div className="absolute z-20 top-0 flex items-center justify-center">
+      <div className="absolute z-20 flex items-center justify-center w-full">
         <div>
           {/* twave */}
-          {/* <img src={twave} alt="wave" className="w-screen" /> */}
+          <img src={twave2} alt="wave" className="w-[32rem]" />
+        </div>
+      </div>
+      <div className="absolute z-20 flex items-center justify-center w-full">
+        <div>
+          {/* twave */}
+          <img src={twave} alt="wave" className="w-[32rem]" />
         </div>
       </div>
       <Navbar />

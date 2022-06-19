@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./Navbar.css"
+import "./Navbar.css";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"
+import { FaBars, FaTimes } from "react-icons/fa";
+// import wave
 
 export const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -10,15 +11,18 @@ export const Navbar = () => {
   return (
     <>
       <nav className="navbar ">
-        <div className="flex px-10 bg-black m-auto justify-center w-[32rem] h-[80px] bg-gradient-to-r from-[#F1A259] to-[#EC7251]  items-center">
-
-          <div className="text-white" onClick={() => setClick(!click)}>{click ? <FaTimes /> : <FaBars />}</div>
+        {/* bg-gradient-to-r from-[#F1A259] to-[#EC7251] */}
+        <div className="flex px-10  m-auto justify-center w-[32rem] h-[80px]   items-center">
+          <div className="text-[#F1A259] " onClick={() => setClick(!click)}>
+            {click ? <FaTimes /> : <FaBars />}
+          </div>
           <div className=" text-white w-[32rem]">
-            <h1 className="text-right">Halo, Hekpes</h1>
+            <h1 className="text-right">
+              <span className="text-md">Halo,</span> <span className="font-bold text-xl ">Hekpes</span>
+            </h1>
           </div>
         </div>
-      </nav >
+      </nav>
     </>
-
   );
 };

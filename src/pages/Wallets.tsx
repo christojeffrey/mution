@@ -20,26 +20,30 @@ const Wallets = () => {
       <div className="w-[27rem] mt-10">
         <h1 className="font-bold text-3xl text-[#474646] mb-5">Catatan Saldo</h1>
       </div>
-      {dataWallets?.map((wallet: any, index: any) => {
-        let total = 0;
-        wallet.data.forEach((data: any) => {
-          total += data.balances.available;
-        });
-        console.log("total");
-        console.log(total);
-        console.log("wllet");
-        console.log(wallet);
-        let id;
-        let name;
-        if (connectedWalletInfo) {
-          id = connectedWalletInfo[index].id;
-          name = connectedWalletInfo[index].name;
-        }
-        console.log("aAAA");
-        return <BalanceBox wallet={{ id, name, total }} />;
-      })}
+      {dataWallets ? (
+        dataWallets.map((wallet: any, index: any) => {
+          let total = 0;
+          wallet.data.forEach((data: any) => {
+            total += data.balances.available;
+          });
+          console.log("total");
+          console.log(total);
+          console.log("wllet");
+          console.log(wallet);
+          let id;
+          let name;
+          if (connectedWalletInfo) {
+            id = connectedWalletInfo[index].id;
+            name = connectedWalletInfo[index].name;
+          }
+          console.log("aAAA");
+          return <BalanceBox wallet={{ id, name, total }} />;
+        })
+      ) : (
+        <div>Loading...</div>
+      )}
       <div className="mt-10 text-6xl">
-        <button className="text-[#EC7250]">
+        <button className="text-[#EC7250] transition ease-in-out hover:scale-105">
           <Link className="flex flex-col items-center" to="/add">
             <div className="text-[#EC7250]">
               <BsPlusCircle />
