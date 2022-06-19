@@ -34,9 +34,9 @@ function App() {
             <Route path="/allmutations" element={<AllMutations />} />
 
             {/* add digital wallet */}
-            <Route path="/sendauthovo" element={<SendAuthOVO />} />
-            <Route path="/verifyauthovo" element={<VerifyAuthOVO />} />
-            <Route path="/getuserdataovo" element={<GetUserDataOVO />} />
+            <Route path="/ovo/sendauth" element={<SendAuthOVO />} />
+            <Route path="/ovo/verifyauth" element={<VerifyAuthOVO />} />
+            <Route path="/ovo/getuserdata" element={<GetUserDataOVO />} />
             {/* add digital wallet */}
 
             {/* catcher buat 404*/}

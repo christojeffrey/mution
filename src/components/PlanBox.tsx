@@ -9,7 +9,7 @@ const PlanBox = () => {
         <div className="flex flex-col justify-content items-center">
             <div className="card flex flex-col p-10">
                 <h1 className="text-[#5689F5] font-bold text-2xl">Transportasi</h1>
-                <ProgressBar progress={10} />
+                <ProgressBar strokeWidth={20} fontsize={25} size={150} progress={10} />
                 <h3 className="font-bold">Rp125.000</h3>
                 <h3>/Rp250.000</h3>
                 <br />
