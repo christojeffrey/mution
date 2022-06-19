@@ -3,14 +3,11 @@ import PropTypes from 'prop-types';
 
 import './ProgressBar.css';
 
-const ProgressBar = (props: { progress: any; }) => {
+const ProgressBar = (props: { strokeWidth: any, fontsize: any, size: any, progress: any; }) => {
     const [offset, setOffset] = useState(0);
     const circleRef = useRef(null);
 
-    const strokeWidth = 20
-    const size = 150
-
-    const { progress } = props;
+    const { strokeWidth, fontsize, progress, size } = props;
 
     const center = size / 2;
     const radius = size / 2 - strokeWidth / 2;
@@ -50,6 +47,7 @@ const ProgressBar = (props: { progress: any; }) => {
                 <text
                     x={`${center}`}
                     y={`${center}`}
+                    fontSize={fontsize}
                     className="svg-circle-text">
                     {progress}%
                 </text>
@@ -60,6 +58,9 @@ const ProgressBar = (props: { progress: any; }) => {
 
 ProgressBar.propTypes = {
     progress: PropTypes.number.isRequired,
+    size: PropTypes.number.isRequired,
+    fontsize: PropTypes.number.isRequired,
+    strokeWidth: PropTypes.number.isRequired,
 }
 
 export default ProgressBar;

@@ -41,3 +41,8 @@
     font-weight: bold;
     background-color: #FFFFFF;
 }
+
+.home-notification {
+    display: flex;
+    margin: 1px;
+}

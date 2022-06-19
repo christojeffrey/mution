@@ -1,20 +1,23 @@
 import { useGetPublicToken, useGetAvailableInstitutions } from "../utils/brick";
 import "./AddInstitutions.css";
+import { Link } from "react-router-dom"
 
 const AddInstitutionCard = ({ institution }: { institution: any }) => {
   return (
     <div className="institution-card">
-      <img
-        src={
-          institution.id === 12
-            ? require("../assets/12.png")
-            : institution.id === 11
-              ? require("../assets/11.png")
-              : ""
-        }
-        alt=""
-        width={150}
-      />
+      <Link to="/ovo/getuserdata">
+        <img
+          src={
+            institution.id === 12
+              ? require("../assets/12.png")
+              : institution.id === 11
+                ? require("../assets/11.png")
+                : ""
+          }
+          alt=""
+          width={150}
+        />
+      </Link>
     </div>
   );
   //   automatic_verification: true
