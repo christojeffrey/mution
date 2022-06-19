@@ -155,15 +155,14 @@ export const useVerifyAuthOVO = ({ username, refId, deviceId, otpNumber, pin }: 
   return { responseAuth: response };
 };
 
-export const useGetAllWalletData = async (userAccessTokens: any[]) => {
-  let result;
+export const useGetAllWalletData = (userAccessTokens: any[]) => {
   const [response, setResponse] = useState<any>(null);
 
   console.log("userAccessTokens");
   console.log(userAccessTokens);
   useEffect(() => {
     console.log("HARUSNYA GK BERUBAH");
-    let promises = userAccessTokens.map((userAccessToken: any) => {
+    let promises = userAccessTokens?.map((userAccessToken: any) => {
       console.log("userAccessToken");
       console.log(userAccessToken);
       return fetch(`${process.env.REACT_APP_API_URL}/v1/account/list`, {
@@ -185,24 +184,22 @@ export const useGetAllWalletData = async (userAccessTokens: any[]) => {
           console.log(typeof item);
         });
         setResponse(data);
-        result = data;
       });
-  }, []);
+  }, [userAccessTokens]);
 
   return response;
 };
 
 // data buat mutasi
-export const useGetMutation = async (userAccessTokens: any[]) => {
+export const useGetMutation = (userAccessTokens: any[]) => {
   // sementara asumsi 90 hari terakhir
-  let result;
   const [response, setResponse] = useState<any>(null);
 
   console.log("userAccessTokens");
   console.log(userAccessTokens);
   useEffect(() => {
     console.log("HARUSNYA GK BERUBAH");
-    let promises = userAccessTokens.map((userAccessToken: any) => {
+    let promises = userAccessTokens?.map((userAccessToken: any) => {
       console.log("userAccessToken");
       console.log(userAccessToken);
       return fetch(`${process.env.REACT_APP_API_URL}/v1/transaction/list?from=2022-06-11&to=2022-06-19`, {
@@ -224,8 +221,7 @@ export const useGetMutation = async (userAccessTokens: any[]) => {
           console.log(typeof item);
         });
         setResponse(data);
-        result = data;
       });
-  }, []);
+  }, [userAccessTokens]);
   return response;
 };
