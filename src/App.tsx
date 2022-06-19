@@ -21,13 +21,24 @@ import MutationsOVO from "./pages/MutationsOVO";
 import SuccessAddingWallet from "./pages/SuccessAddingWallet";
 import Planning from "./pages/Planning";
 
+import bwave from "./assets/bwave.svg";
+import twave from "./assets/twave.svg";
+
 function App() {
   return (
     <div className="">
+      {/* full bg */}
+      <div className=" absolute bg-[#F4F7FB] -z-50 w-full h-[40rem]"></div>
+      <div className="absolute z-20 top-0 flex items-center justify-center">
+        <div>
+          {/* twave */}
+          {/* <img src={twave} alt="wave" className="w-screen" /> */}
+        </div>
+      </div>
       <Navbar />
       {/* force mobile */}
-      <div className="flex flex-col items-center ">
-        <div className="w-[32rem] min-h-screen bg-[#F4F7FB]">
+      <div className="flex flex-col items-center bg-[#F4F7FB]">
+        <div className="w-[32rem] min-h-screen z-30">
           <Routes>
             {/* note to self, path selalu huruf kecil */}
             <Route path="/" element={<Home />} />
@@ -55,6 +66,12 @@ function App() {
         </div>
       </div>
       {/* force mobile */}
+      <div className="absolute z-20 bottom-[-15rem] flex items-center justify-center">
+        <div>
+          {/* bwave */}
+          <img src={bwave} alt="wave" className="w-screen" />
+        </div>
+      </div>
     </div>
   );
 }
